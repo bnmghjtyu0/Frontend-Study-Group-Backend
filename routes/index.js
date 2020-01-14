@@ -16,4 +16,12 @@ router.get('/articles', async (req, res, next) => {
   res.status(200).json({ retCode: 1, retMsg: '', retData: datas })
 })
 
+router.get('/testing1', async (req, res, next) => {
+  res.status(200).json({ text: 'this is testing 1' })
+})
+
+router.get('/testing2', async (req, res, next) => {
+  await setTimeout(() => res.status(200).json({ text: 'this is testing 2222222' }), 3000)
+})
+
 module.exports = router
